@@ -59,7 +59,7 @@ function Navbar() {
                 </li>
             </ul>
             {/* Hamburger */}
-            <div onClick={handleClick} className="cursor-pointer md:hidden z-10">
+            <div onClick={handleClick} className="cursor-pointer text-[#3E8DE3] text-5xl md:hidden z-10">
                 {!nav ? <FaBars /> : <FaTimes />}
             </div>
             {/* Mobile Menu */}
@@ -67,33 +67,33 @@ function Navbar() {
                 className={
                     !nav 
                         ? 'hidden' 
-                        : 'absolute top-0 left-0 w-full h-screen bg-[#0a192f] flex flex-col justify-center items-center'
+                        : 'absolute top-0 left-0 w-full h-screen bg-[#143AA2] flex flex-col justify-center items-center'
                 }
             >
-                <li className="py-6 text-4xl">
+                <li className="py-6 text-4xl text-[#3E8DE3]">
                     <Link onClick={handleClick} to="home" smooth={true} duration={500}>
                         Home
                     </Link>
                 </li>
-                <li className="py-6 text-4xl">
+                <li className="py-6 text-4xl text-[#3E8DE3]">
                     {' '}
                     <Link onClick={handleClick} to='about' smooth={true} duration={500}>
                         About
                     </Link>
                 </li>
-                <li className='py-6 text-4xl'>
+                <li className='py-6 text-4xl text-[#3E8DE3]'>
                     {' '}
                     <Link onClick={handleClick} to='pictures' smooth={true} duration={500}>
                         Pictures
                     </Link>
                 </li>
-                <li className='py-6 text-4xl'>
+                <li className='py-6 text-4xl text-[#3E8DE3]'>
                     {' '}
                     <Link onClick={handleClick} to='donation' smooth={true} duration={500}>
                         Donate
                     </Link>
                 </li>
-                <li className='py-6 text-4xl'>
+                <li className='py-6 text-4xl text-[#3E8DE3]'>
                     {' '}
                     <Link onClick={handleClick} to='checkpoint' smooth={true} duration={500}>
                         Contact

@@ -64,12 +64,12 @@ function Pictures() {
         {selectedImage && (
           <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-100">
             <span
-              className="absolute top-0 right-0 cursor-pointer text-[#d9317e] text-8xl p-2"
+              className="absolute top-0 right-0 cursor-pointer text-[#143AA2] text-8xl p-2"
               onClick={closeModal}
             >
               &times;
             </span>
-            <div className="max-w-md mx-auto bg-[#9e215a] rounded-lg p-2 sm:p-4 relative">
+            <div className="max-w-md mx-auto bg-[#143AA2] rounded-lg p-2 sm:p-4 relative">
               <img
                 src={selectedImage.src}
                 alt={selectedImage.alt}
