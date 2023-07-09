@@ -15,9 +15,16 @@ function Navbar() {
     const handleClick = () => setNav(!nav);
 
     return(
-        <div className="fixed w-full h-[80px] flex justify-between items-center px-4 bg-gradient-to-r from-bg-gradient-to-r from-[#d9317e] to-[#9e215a] text-gray-300">
+        <div className="fixed w-full h-[80px] flex justify-between items-center px-4 bg-gradient-to-r from-bg-gradient-to-r from-[#3E8DE3] to-[#143AA2] text-gray-300">
             <div>
-                <h1 className="font-thin text-2xl italic font-serif">Kim Buckner's R.E.A.C.H. Program</h1>
+                <h1 className="font-thin text-[#04060D] cursor-pointer text-2xl italic font-serif">
+                    <Link to="home"
+                    smooth={true} 
+                    duration={500}
+                    >
+                    REACH INC
+                    </Link>
+                </h1>
             </div>
             {/* Menu */}
             <ul className="hidden md:flex gap-x-0">
@@ -25,34 +32,34 @@ function Navbar() {
                     <Link to="home" 
                         smooth={true} 
                         duration={500}
-                        className="hover:bg-[#d9317e] px-3 py-5 rounded-md"
+                        className="hover:bg-[#3E8DE3] text-[#04060D] px-3 py-5 rounded-md"
                     >
                         Home
                     </Link>
                 </li>
                 <li>
-                    <Link to="about" smooth={true} duration={500} className="hover:bg-[#d9317e] px-3 py-5 rounded-md">
+                    <Link to="about" smooth={true} duration={500} className="hover:bg-[#3E8DE3] px-3 text-[#04060D] py-5 rounded-md">
                         About
                     </Link>
                 </li>
                 <li>
-                    <Link to="pictures" smooth={true} duration={500} className="hover:bg-[#d9317e] px-3 py-5 rounded-md">
+                    <Link to="pictures" smooth={true} duration={500} className="hover:bg-[#3E8DE3] text-[#04060D] px-3 py-5 rounded-md">
                         Pictures
                     </Link>
                 </li>
                 <li>
-                    <Link to="donation" smooth={true} duration={500} className="hover:bg-[#d9317e] px-3 py-5 rounded-md">
+                    <Link to="donation" smooth={true} duration={500} className="hover:bg-[#3E8DE3] text-[#04060D] px-3 py-5 rounded-md">
                         Donate
                     </Link>
                 </li>
                 <li>
-                    <Link to="checkpoint" smooth={true} duration={500} className="hover:bg-[#d9317e] px-3 py-5 rounded-md">
+                    <Link to="checkpoint" smooth={true} duration={500} className="hover:bg-[#3E8DE3] text-[#04060D] px-3 py-5 rounded-md">
                         Contact
                     </Link>
                 </li>
             </ul>
             {/* Hamburger */}
-            <div onClick={handleClick} className="md:hidden z-10">
+            <div onClick={handleClick} className="cursor-pointer md:hidden z-10">
                 {!nav ? <FaBars /> : <FaTimes />}
             </div>
             {/* Mobile Menu */}
@@ -76,19 +83,19 @@ function Navbar() {
                 </li>
                 <li className='py-6 text-4xl'>
                     {' '}
-                    <Link onClick={handleClick} to='skills' smooth={true} duration={500}>
-                        Skills
+                    <Link onClick={handleClick} to='pictures' smooth={true} duration={500}>
+                        Pictures
                     </Link>
                 </li>
                 <li className='py-6 text-4xl'>
                     {' '}
-                    <Link onClick={handleClick} to='work' smooth={true} duration={500}>
-                        Work
+                    <Link onClick={handleClick} to='donation' smooth={true} duration={500}>
+                        Donate
                     </Link>
                 </li>
                 <li className='py-6 text-4xl'>
                     {' '}
-                    <Link onClick={handleClick} to='contact' smooth={true} duration={500}>
+                    <Link onClick={handleClick} to='checkpoint' smooth={true} duration={500}>
                         Contact
                     </Link>
                 </li>
@@ -101,7 +108,7 @@ function Navbar() {
                             className="flex justify-between items-center w-full text-gray-300"
                             href="https://www.facebook.com/profile.php?id=100094138809691"
                             target="_blank"
-                            rel="noreferrer"
+                            rel="noopener noreferrer"
                         >
                             FaceBook <FaFacebook size={30} />
                         </a>
@@ -111,7 +118,7 @@ function Navbar() {
                             className="flex justify-between items-center w-full text-gray-300"
                             href="https://twitter.com/REACH14AllOrg"
                             target="_blank"
-                            rel="noreferrer"
+                            rel="noopener noreferrer"
                         >
                             Twitter <FaTwitter size={30} />
                         </a>
@@ -121,7 +128,7 @@ function Navbar() {
                             className='flex justify-between items-center w-full text-gray-300'
                             href="mailto:r.e.a.c.h.14all@gmail.com"
                             target="_blank"
-                            rel="noreferrer"
+                            rel="noopener noreferrer"
                         >
                             Email <HiOutlineMail size={30} />
                         </a>
@@ -131,7 +138,7 @@ function Navbar() {
                             className='flex justify-between items-center w-full text-gray-300'
                             href='https://www.linkedin.com/in/reach-organization-005a69280/'
                             target="_blank"
-                            rel="noreferrer"
+                            rel="noopener noreferrer"
                         >
                             LinkedIn <FaLinkedin size={30} />
                         </a>

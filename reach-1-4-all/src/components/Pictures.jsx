@@ -39,41 +39,46 @@ function Pictures() {
   ];
 
   return (
-    <div className="pictures w-screen h-screen flex flex-col justify-center items-center">
-        <div>
-            <p className="text-5xl font-bold flex flex-col justify-center items-center border-b-4 border-[#d9317e]">People We've Helped!</p>
-            <p className="p-4 text-xl">Take a look at some of the positive changes we have been able to provide our community! We will remain committed to making a difference and building a brighter future together.</p>
-        </div>
-        <div className="flex flex-wrap justify-center">
-            {images.map((image) => (
-                <div className="p-4" key={image.id}>
-                    <img
-                        src={image.src}
-                        alt={image.alt}
-                        onClick={() => openModal(image)}
-                        className="cursor-pointer w-64 h-64 object-cover rounded-lg shadow-md"
-                    />
-                </div>
-            ))}
+    <div className="pictures min-h-screen flex flex-col bg-[#D3D4D7] justify-center items-center">
+      <div className="px-4">
+        <p className="text-3xl sm:text-5xl font-bold text-center border-b-4 border-[#3E8DE3]">
+          People We've Helped!
+        </p>
+        <p className="p-2 sm:p-4 text-base sm:text-xl text-center">
+          Take a look at some of the positive changes we have been able to provide our community! We
+          will remain committed to making a difference and building a brighter future together.
+        </p>
+      </div>
+      <div className="flex flex-wrap justify-center">
+        {images.map((image) => (
+          <div className="p-2 sm:p-4 w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5" key={image.id}>
+            <img
+              src={image.src}
+              alt={image.alt}
+              onClick={() => openModal(image)}
+              className="cursor-pointer w-full h-auto object-cover rounded-lg shadow-md"
+            />
+          </div>
+        ))}
 
-            {selectedImage && (
-                <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
-                    <span
-                        className="absolute top-0 right-0 cursor-pointer text-[#d9317e] text-9xl p-2"
-                        onClick={closeModal}
-                    >
-                    &times;
-                    </span>
-                    <div className="max-w-lg mx-auto bg-[#9e215a] rounded-lg p-4 relative">
-                        <img
-                            src={selectedImage.src}
-                            alt={selectedImage.alt}
-                            className="w-full h-auto rounded-lg shadow-md"
-                        />
-                    </div>
-                 </div>
-            )}
-        </div>
+        {selectedImage && (
+          <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-100">
+            <span
+              className="absolute top-0 right-0 cursor-pointer text-[#d9317e] text-8xl p-2"
+              onClick={closeModal}
+            >
+              &times;
+            </span>
+            <div className="max-w-md mx-auto bg-[#9e215a] rounded-lg p-2 sm:p-4 relative">
+              <img
+                src={selectedImage.src}
+                alt={selectedImage.alt}
+                className="w-full h-auto rounded-lg shadow-md"
+              />
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

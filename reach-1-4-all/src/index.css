@@ -24,3 +24,10 @@
         hsla(242, 74%, 61%, 0.8)   
     )!important;
 }
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .content-div {
+      height: 150px;
+    }
+  }
