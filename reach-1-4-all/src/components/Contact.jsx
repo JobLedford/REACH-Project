@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { db, collection, addDoc } from '../firebase';
 import { FaFacebook, FaTwitter, FaEnvelope, FaLinkedin, FaTiktok } from 'react-icons/fa';
 
 function Contact() {
@@ -11,29 +12,24 @@ function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     try {
-      console.log(formData);
-      const response = await fetch('/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+      await db.collection('submissions').add(formData);
+  
+      console.log('Form submitted successfully');
+      // Reset form data
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        message: '',
       });
-
-      const data = await response.json();
-      console.log(data); // Check the response from the backend
+  
+      // Send email with form data
+      sendEmail(formData);
     } catch (error) {
       console.error('Error:', error);
     }
-
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      message: '',
-    });
   };
 
   const handleChange = (e) => {
