@@ -1,7 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getAnalytics } from 'firebase/analytics';
-import { getFirestore } from 'firebase/firestore';
-import 'firebase/compat/firestore'; // Import the Firestore module
+import { getFirestore } from '@firebase/firestore';
 
 // Firebase configuration
 const firebaseConfig = {
@@ -16,7 +14,4 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-const db = getFirestore(app); // Rename 'firestore' to 'db'
-
-export { app, analytics, db }; // Update the export statement
+export const firestore = getFirestore(app);

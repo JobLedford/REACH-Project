@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
-import { db, collection, addDoc } from '../firebase';
+import React, { useState, useRef } from 'react';
+//import { firestore } from '../firebase';
+import { addDoc,collection } from '@firebase/firestore';
 import { FaFacebook, FaTwitter, FaEnvelope, FaLinkedin, FaTiktok } from 'react-icons/fa';
+import axios from 'axios';
 
 function Contact() {
+  //create a state to store the form data
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -10,29 +13,66 @@ function Contact() {
     message: '',
   });
 
+  //initialize a Ref for each input value
+  const nameRef = useRef();
+  const emailRef= useRef();
+  const phoneRef = useRef();
+  const messageRef = useRef();
+
+  //handle submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
+    //get form data from Refs and construct the data object
+    let data = {
+      name: nameRef.current.value,
+      email: emailRef.current.value,
+      phone: phoneRef.current.value,
+      message: messageRef.current.value,
+    };
+
     try {
-      await db.collection('submissions').add(formData);
-  
-      console.log('Form submitted successfully');
-      // Reset form data
+      //access the "Submissons" collection in Firestore
+      //const ref = collection(firestore, "Submissions");
+      // Add the data object to Firestore as a new document
+      //await addDoc(ref, data);
+
+      // Send the form data to Brevo's API endpoint for sending emails
+      const response = await axios.post(
+        'https://api.sendinblue.com/v3/smtp/email',
+        {
+          sender: { name: data.name, email: data.email },
+          to: [{ email: 'r.e.a.c.h.14all@gmail.com' }], // Replace with recipient
+          subject: 'New Contact Form Submission',
+          htmlContent: `<p>Name: ${data.name}</p>
+                        <p>Email: ${data.email}</p>
+                        <p>Phone: ${data.phone}</p>
+                        <p>Message: ${data.message}</p>`,
+        },
+        {
+          headers: {
+            'api-key': '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',
+            'content-type': 'application/json',
+          },
+        }
+      );
+      //Log the API response
+      console.log(response.data); 
+      // Clear form fields
       setFormData({
         name: '',
         email: '',
         phone: '',
         message: '',
       });
-  
-      // Send email with form data
-      sendEmail(formData);
     } catch (error) {
-      console.error('Error:', error);
+      console.log(error);
     }
   };
 
+  //handle form input changes
   const handleChange = (e) => {
+    //update formData state with the newinput value
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -53,6 +93,7 @@ function Contact() {
               className="bg-[#ccd6f6] rounded-md border-2 border-[#04060D] p-2 w-full"
               type="text"
               placeholder="Name"
+              ref={nameRef}
               name="name"
               value={formData.name}
               onChange={handleChange}
@@ -61,6 +102,7 @@ function Contact() {
               className="my-4 rounded-md border-2 border-[#04060D] p-1 mb-0 bg-[#ccd6f6] w-full"
               type="email"
               placeholder="Email"
+              ref={emailRef}
               name="email"
               value={formData.email}
               onChange={handleChange}
@@ -70,6 +112,7 @@ function Contact() {
               className="my-4 rounded-md border-2 border-black p-1 bg-[#ccd6f6] w-full"
               type="tel"
               placeholder="Phone Number"
+              ref={phoneRef}
               name="phone"
               value={formData.phone}
               onChange={handleChange}
@@ -80,6 +123,7 @@ function Contact() {
               name="message"
               rows="5"
               placeholder="Message"
+              ref={messageRef}
               value={formData.message}
               onChange={handleChange}
             ></textarea>
@@ -100,7 +144,7 @@ function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
             >
-              <FaFacebook size={24} />
+              <FaFacebook className="hover:text-[#3E8DE3]" size={24} />
             </a>
             <a 
                 href="https://twitter.com/REACH14AllOrg"
@@ -108,31 +152,31 @@ function Contact() {
                 rel="noopener noreferrer"
 
             >
-              <FaTwitter size={24} />
+              <FaTwitter className="hover:text-[#3E8DE3]" size={24} />
             </a>
             <a 
                 href="mailto:r.e.a.c.h.14all@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
             >
-              <FaEnvelope size={24} />
+              <FaEnvelope className="hover:text-[#3E8DE3]" size={24} />
             </a>
             <a 
                 href="https://www.linkedin.com/in/reach-organization-005a69280/"
                 target="_blank"
                 rel="noopener noreferrer"
             >
-              <FaLinkedin size={24} />
+              <FaLinkedin className="hover:text-[#3E8DE3]" size={24} />
             </a>
             <a href="#" target="_blank" rel="noopener noreferrer">
-              <FaTiktok className="text-2xl text-white hover:text-[#d9317e] transition-colors" />
+              <FaTiktok className="text-2xl text-white hover:text-[#3E8DE3] transition-colors" />
             </a>
           </div>
         </div>
         <div className="max-w-screen-lg mx-auto px-4 text-center">
           <h3 className="border-b-4 border-[#3E8DE3] text-xl font-semibold">Our Contact Information</h3>
-          <p className="text-lg">Call us at: <a href="tel:+15615983236">+1 (561) 598-3236</a></p>
-          <p className="text-lg">Email us at: <a href="mailto:r.e.a.c.h.14all@gmail.com">R.E.A.C.H.14ALL@gmail.com</a></p>
+          <p className="text-lg">Call us at: <a href="tel:+15615983236" className="hover:text-[#3E8DE3]">+1 (561) 598-3236</a></p>
+          <p className="text-lg">Email us at: <a href="mailto:r.e.a.c.h.14all@gmail.com" className="hover:text-[#3E8DE3]">R.E.A.C.H.14ALL@gmail.com</a></p>
         </div>
       </div>
     </div>
