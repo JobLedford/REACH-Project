@@ -15,7 +15,7 @@ function Navbar() {
     const handleClick = () => setNav(!nav);
 
     return(
-        <div className="fixed w-full h-[80px] flex justify-between items-center px-4 bg-gradient-to-r from-bg-gradient-to-r from-[#3E8DE3] to-[#143AA2] text-gray-300">
+        <div className="fixed w-full h-[80px] z-20 flex justify-between items-center px-4 bg-gradient-to-r from-bg-gradient-to-r from-[#3E8DE3] to-[#143AA2] text-gray-300">
             <div>
                 <h1 className="font-thin text-[#04060D] cursor-pointer text-2xl italic font-serif">
                     <Link to="home"
