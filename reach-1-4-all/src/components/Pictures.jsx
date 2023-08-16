@@ -93,21 +93,6 @@ function Pictures() {
     setSlideIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
   };
 
-  // Set to auto switch slide every 5 seconds when the modal is open
-  useEffect(() => {
-    let interval;
-
-    if (selectedImage) {
-      interval = setInterval(() => {
-        nextSlide();
-      }, 5000);
-    }
-
-    return () => clearInterval(interval);
-  }, [selectedImage]);
-
-
-
   return (
     <div className="pictures min-h-screen flex flex-col bg-[#D3D4D7] justify-center items-center">
       <div className="px-4">
@@ -156,18 +141,18 @@ function Pictures() {
         )}
 
         {/* Prev Arrow */}
-        <div className="relative bottom-12 pr-4 md:bottom-64 md:pr-52 md:transform md:-translate-y-1/2">
+        <div className="relative bottom-5 pr-4 md:bottom-64 md:pr-64 md:transform md:-translate-y-1/2">
           <button
-            className="text-4xl md:text-6xl lg:text-8xl text-[#143AA2] cursor-pointer bg-transparent border-none outline-none"
+            className="text-7xl pr-12 lg:text-8xl text-[#143AA2] cursor-pointer bg-transparent border-none outline-none"
             onClick={prevSlide}
           >
             &lt;
           </button>
         </div>
         {/* Next Arrow */}
-        <div className="relative bottom-12 pl-4 md:bottom-64 md:pl-52 md:transform md:-translate-y-1/2">
+        <div className="relative bottom-5 pl-4 md:bottom-64 md:pl-64 md:transform md:-translate-y-1/2">
           <button
-            className="text-4xl md:text-6xl lg:text-8xl text-[#143AA2] cursor-pointer bg-transparent border-none outline-none"
+            className="text-7xl pl-12 lg:text-8xl text-[#143AA2] cursor-pointer bg-transparent border-none outline-none"
             onClick={nextSlide}
           >
             &gt;
