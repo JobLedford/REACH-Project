@@ -1,8 +1,9 @@
 import React, { useState, useRef } from 'react';
 //import { firestore } from '../firebase';
-import { addDoc,collection } from '@firebase/firestore';
+//import { addDoc,collection } from '@firebase/firestore';
 import { FaFacebook, FaTwitter, FaEnvelope, FaLinkedin, FaTiktok } from 'react-icons/fa';
 import axios from 'axios';
+import striptags from 'striptags';
 
 function Contact() {
   //create a state to store the form data
@@ -12,6 +13,8 @@ function Contact() {
     phone: '',
     message: '',
   });
+
+  const [successMessage, setSuccessMessage] = useState('');
 
   //initialize a Ref for each input value
   const nameRef = useRef();
@@ -32,10 +35,14 @@ function Contact() {
     };
 
     try {
+      //*****NON_USED FIREBASE CODE*****//
       //access the "Submissons" collection in Firestore
       //const ref = collection(firestore, "Submissions");
       // Add the data object to Firestore as a new document
       //await addDoc(ref, data);
+      
+      //Strip an HTML tags for security
+      const strippedMessage = striptags(data.message);
 
       // Send the form data to Brevo's API endpoint for sending emails
       const response = await axios.post(
@@ -47,17 +54,24 @@ function Contact() {
           htmlContent: `<p>Name: ${data.name}</p>
                         <p>Email: ${data.email}</p>
                         <p>Phone: ${data.phone}</p>
-                        <p>Message: ${data.message}</p>`,
+                        <p>Message: ${strippedMessage}</p>`,
         },
         {
           headers: {
-            'api-key': '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',
+            'api-key': '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',
             'content-type': 'application/json',
           },
         }
       );
       //Log the API response
       console.log(response.data); 
+
+      // Show an alert to the user that the contact information has been sent
+      //window.alert('Contact information has been sent successfully! We will contact you soon!');
+
+      // Set the success message
+      setSuccessMessage('Thank you! Contact information has been sent successfully! We will contact you soon!');
+
       // Clear form fields
       setFormData({
         name: '',
@@ -133,6 +147,8 @@ function Contact() {
             >
               Send Contact Information
             </button>
+            {/* Display success message if it's not empty */}
+            {successMessage && <p className="text-xl border-2 border-black mb-6 bg-[#3E8DE3] rounded-md text-center text-[#143AA2]">{successMessage}</p>}
           </form>
         </div>
       </div>
