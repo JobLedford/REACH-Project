@@ -10,6 +10,10 @@ import new_img4 from '../assets/new_helpimg4.jpg';
 import new_img5 from '../assets/new_helpimg5.jpg';
 import new_img6 from '../assets/new_helpimg6.jpg';
 import new_img7 from '../assets/new_helpimg7.jpg';
+import new_img8 from '../assets/new_helpimg8.jpg';
+import new_img9 from '../assets/new_helpimg9.jpg';
+import new_img10 from '../assets/new_helpimg10.jpg';
+import new_img11 from '../assets/new_helpimg11.jpg';
 
 
 
@@ -80,6 +84,26 @@ function Pictures() {
       id: 11,
       src: new_img7,
       alt: 'A male client shows a brown bag donated to him.'
+    },
+    {
+      id: 12,
+      src: new_img8,
+      alt: 'A male shows plate of food, and drinks donated.'
+    },
+    {
+      id: 13,
+      src: new_img9,
+      alt: 'A smiling female shows her donated plate of food and drinks off.'
+    },
+    {
+      id: 14,
+      src: new_img10,
+      alt: 'A man waves while woman reaches into trunk of SUV.'
+    },
+    {
+      id: 15,
+      src: new_img11,
+      alt: 'A male in a white tank top shows his donated food and drinks.'
     },
   ];
 
