@@ -4,7 +4,6 @@ import React, { useState, useRef } from 'react';
 import { FaFacebook, FaTwitter, FaEnvelope, FaLinkedin, FaTiktok } from 'react-icons/fa';
 import axios from 'axios';
 import striptags from 'striptags';
-
 //Set API key
 const b_api_key = process.env.REACT_APP_BREVO_API_KEY;
 
@@ -68,7 +67,6 @@ function Contact() {
       );
       //Log the API response
       console.log(response.data); 
-
       // Show an alert to the user that the contact information has been sent
       //window.alert('Contact information has been sent successfully! We will contact you soon!');
 
