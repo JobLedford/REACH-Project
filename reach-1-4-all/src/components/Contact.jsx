@@ -4,6 +4,8 @@ import React, { useState, useRef } from 'react';
 import { FaFacebook, FaTwitter, FaEnvelope, FaLinkedin, FaTiktok } from 'react-icons/fa';
 import axios from 'axios';
 import striptags from 'striptags';
+//Set API key
+const b_api_key = process.env.REACT_APP_BREVO_API_KEY;
 
 function Contact() {
   //create a state to store the form data
@@ -58,14 +60,13 @@ function Contact() {
         },
         {
           headers: {
-            'api-key': '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',
+            'api-key': b_api_key,
             'content-type': 'application/json',
           },
         }
       );
       //Log the API response
       console.log(response.data); 
-
       // Show an alert to the user that the contact information has been sent
       //window.alert('Contact information has been sent successfully! We will contact you soon!');
 
@@ -142,7 +143,7 @@ function Contact() {
               onChange={handleChange}
             ></textarea>
             <button
-              className="rounded-md bg-gradient-to-r from-bg-gradient-to-r from-[#3E8DE3] to-[#143AA2] border-2 border-black text-white hover:scale-110 duration-500 px-4 py-3 my-8 mx-auto"
+              className="rounded-md bg-gradient-to-r z-10 from-bg-gradient-to-r from-[#3E8DE3] to-[#143AA2] border-2 border-black text-white hover:scale-110 duration-500 px-4 py-3 my-8 mx-auto"
               type="submit"
             >
               Send Contact Information
