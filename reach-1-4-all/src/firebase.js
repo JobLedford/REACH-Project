@@ -1,9 +1,10 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from '@firebase/firestore';
 
+const f_api_key = process.env.REACT_APP_FIREBASE_KEY;
 // Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDEMa1jHPsVeX4cC75-fY6v34Vlr-vO2gM",
+  apiKey: f_api_key,
   authDomain: "reach-6b127.firebaseapp.com",
   projectId: "reach-6b127",
   storageBucket: "reach-6b127.appspot.com",

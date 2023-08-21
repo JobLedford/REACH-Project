@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import video from '../assets/helpvid.mp4';
 import img1 from '../assets/helpimg1.jpg';
 import img2 from '../assets/helpimg2.jpg';
 import img3 from '../assets/helpimg3.jpg';
@@ -146,6 +147,7 @@ function Pictures() {
           ))}
         </div>
 
+        {/* Modal */}
         {selectedImage && (
           <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-100">
             <span
@@ -182,6 +184,15 @@ function Pictures() {
             &gt;
           </button>
         </div>
+      </div>
+      {/* Video */}
+      <div className="relative w-full max-w-md mx-auto bg-[#143AA2] rounded-lg mb-20 sm:p-4">
+        <video
+          src={video}
+          alt="Video slideshow of pictures showing what the organization donates and who they help."
+          controls
+          className="w-full h-auto rounded-md shadow-md"
+        />
       </div>
     </div>
   );
