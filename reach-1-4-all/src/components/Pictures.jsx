@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import video from '../assets/helpvid.mp4';
+import video2 from '../assets/helpvid2.mp4';
 import img1 from '../assets/helpimg1.jpg';
 import img2 from '../assets/helpimg2.jpg';
 import img3 from '../assets/helpimg3.jpg';
@@ -186,14 +187,26 @@ function Pictures() {
         </div>
       </div>
       {/* Video */}
-      <div className="relative w-full max-w-md mx-auto bg-[#143AA2] rounded-lg mb-20 sm:p-4">
-        <video
-          src={video}
-          alt="Video slideshow of pictures showing what the organization donates and who they help."
-          controls
-          className="w-full h-auto rounded-md shadow-md"
-        />
-      </div>
+      <div className="w-full sm:w-1/2 md:w-2/3 lg:w-3/4 flex flex-col sm:flex-row justify-center">
+          <div className="w-full max-w-md mx-auto bg-[#143AA2] rounded-lg mb-20 sm:p-4">
+            <video
+              src={video}
+              type="video/mp4"
+              alt="Video slideshow of pictures showing what the organization donates and who they help."
+              controls
+              className="w-full h-auto rounded-md shadow-md"
+            />
+          </div>
+          <div className="w-full max-w-md mx-auto bg-[#143AA2] rounded-lg mb-20 sm:p-4">
+            <video
+              src={video2}
+              type="video/mp4"
+              alt="Video of Pastor Kim spending time and talking to a couple of people."
+              controls
+              className="w-full h-full rounded-md shadow-md"
+            />
+          </div>
+        </div>
     </div>
   );
 }
