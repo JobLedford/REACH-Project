@@ -8,8 +8,8 @@ function Home() {
     <div name="home" className="h-screen w-full bg-[#D3D4D7]">
       <div className="max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row">
         <div className="flex flex-col justify-center h-full">
-          <h2 className="text-4xl sm:text-7xl mt-6 font-bold text-[#00000]">
-            R.E.A.C.H.
+          <h2 className="text-xl sm:text-4xl mt-12 md:mt-6 font-bold text-[#00000]">
+          Restoring, Educating, Advocating, Community, & Health.
           </h2>
           <p className="text-black-300 text-xl py-4 max-w-md">
             Restoring, educating, advocating—these three words capture the essence of our dedication to community health. At R.E.A.C.H., we are committed to making a lasting difference in our community. With your support, we can continue our vital work, providing resources, support, and education that empower individuals and families to prioritize their well-being. Join us in our mission to build a healthier future for all.
