@@ -172,7 +172,7 @@ function Contact() {
               <FaTwitter className="hover:text-[#3E8DE3]" size={24} />
             </a>
             <a 
-                href="mailto:r.e.a.c.h.14all@gmail.com"
+                href="mailto:jo6ledford6@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
             >
