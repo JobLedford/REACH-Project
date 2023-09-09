@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d6eca3a0.css",
+    "main.js": "/static/js/main.84f3d8a0.js",
+    "static/media/helpimg1.jpg": "/static/media/helpimg1.9f3e7e9df3cc436b67d5.jpg",
+    "static/media/helpimg4.jpg": "/static/media/helpimg4.512c8c185a6211094ae7.jpg",
+    "static/media/helpimg3.jpg": "/static/media/helpimg3.12c1e31aac680c615950.jpg",
+    "static/media/helpimg2.jpg": "/static/media/helpimg2.695b2740e7b487efe31d.jpg",
+    "static/media/new_helpimg9.jpg": "/static/media/new_helpimg9.1cf8b5a25cf92beb857b.jpg",
+    "static/media/new_helpimg10.jpg": "/static/media/new_helpimg10.00816cf7f66b6eac3b9a.jpg",
+    "static/media/new_helpimg8.jpg": "/static/media/new_helpimg8.fa7cec588515a92a96b7.jpg",
+    "static/media/new_helpimg11.jpg": "/static/media/new_helpimg11.3f34837bad1ce54ba8c5.jpg",
+    "static/media/new_helpimg6.jpg": "/static/media/new_helpimg6.6b436e1a7c0961763a11.jpg",
+    "static/media/new_helpimg7.jpg": "/static/media/new_helpimg7.27ece3ee39c47ffc1837.jpg",
+    "static/media/new_helpimg4.jpg": "/static/media/new_helpimg4.d185d3a3f7f0ad4d43b0.jpg",
+    "static/media/new_helpimg1.jpg": "/static/media/new_helpimg1.fabbaa29eccde5ab95b5.jpg",
+    "static/media/new_helpimg3.jpg": "/static/media/new_helpimg3.9efd31e628a687557bb9.jpg",
+    "static/media/reaching-hands.jpeg": "/static/media/reaching-hands.7b0e6743e65293ecf6d7.jpeg",
+    "static/media/new_helpimg5.jpg": "/static/media/new_helpimg5.cde0a2669e9e828e8e98.jpg",
+    "static/media/new_helpimg2.jpg": "/static/media/new_helpimg2.a245bb2c6b4cb77e151e.jpg",
+    "index.html": "/index.html",
+    "main.d6eca3a0.css.map": "/static/css/main.d6eca3a0.css.map",
+    "main.84f3d8a0.js.map": "/static/js/main.84f3d8a0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d6eca3a0.css",
+    "static/js/main.84f3d8a0.js"
+  ]
+}

@@ -22,7 +22,7 @@ function Navbar() {
                     smooth={true} 
                     duration={500}
                     >
-                    REACH INC
+                    REACH PROGRAM
                     </Link>
                 </h1>
             </div>

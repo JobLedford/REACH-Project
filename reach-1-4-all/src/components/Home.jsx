@@ -8,7 +8,7 @@ function Home() {
     <div name="home" className="h-screen w-full bg-[#D3D4D7]">
       <div className="max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row">
         <div className="flex flex-col justify-center h-full">
-          <h2 className="text-xl sm:text-4xl mt-12 md:mt-6 font-bold text-[#00000]">
+          <h2 className="text-xl sm:text-4xl mt-24 md:mt-6 font-bold text-[#00000]">
           Restoring, Educating, Advocating, Community, & Health.
           </h2>
           <p className="text-black-300 text-xl py-4 max-w-md">
