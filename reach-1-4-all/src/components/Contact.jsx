@@ -51,7 +51,7 @@ function Contact() {
         'https://api.sendinblue.com/v3/smtp/email',
         {
           sender: { name: data.name, email: data.email },
-          to: [{ email: 'jo6ledford6@gmail.com' }], // Replace with recipient
+          to: [{ email: 'r.e.a.c.h.14all@gmail.com' }], // Replace with recipient
           subject: 'New Contact Form Submission',
           htmlContent: `<p>Name: ${data.name}</p>
                         <p>Email: ${data.email}</p>
@@ -103,7 +103,7 @@ function Contact() {
               You can contact us by either calling, emailing, or fill out this form and we will contact you.
             </p>
           </div>
-          <form data-netlify="true" onSubmit={handleSubmit} className="flex flex-col items-center">
+          <form onSubmit={handleSubmit} className="flex flex-col items-center">
             <input
               className="bg-[#ccd6f6] rounded-md border-2 border-[#04060D] p-2 w-full"
               type="text"
