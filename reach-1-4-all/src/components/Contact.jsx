@@ -51,7 +51,7 @@ function Contact() {
         'https://api.sendinblue.com/v3/smtp/email',
         {
           sender: { name: data.name, email: data.email },
-          to: [{ email: 'r.e.a.c.h.14all@gmail.com' }], // Replace with recipient
+          to: [{ email: 'jo6ledford6@gmail.com' }], // Replace with recipient
           subject: 'New Contact Form Submission',
           htmlContent: `<p>Name: ${data.name}</p>
                         <p>Email: ${data.email}</p>
