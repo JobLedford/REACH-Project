@@ -103,7 +103,7 @@ function Contact() {
               You can contact us by either calling, emailing, or fill out this form and we will contact you.
             </p>
           </div>
-          <form onSubmit={handleSubmit} className="flex flex-col items-center">
+          <form data-netlify="true" onSubmit={handleSubmit} className="flex flex-col items-center">
             <input
               className="bg-[#ccd6f6] rounded-md border-2 border-[#04060D] p-2 w-full"
               type="text"
